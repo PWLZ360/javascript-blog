@@ -49,10 +49,12 @@ const optArticleSelector = '.post',
 
 function generateTitleLinks(customSelector = '') {
   console.log(customSelector);
+  html= '';
   /* remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
+  console.log(titleList);
   titleList.innerHTML = '';
-
+  console.log(titleList);
 
   /* for each article */
   const articles = document.querySelectorAll(optArticleSelector + customSelector);
@@ -100,7 +102,6 @@ function generateTags() {
     let HTML = '';
     /* get tags from data-tags attribute */
     const articleTags = article.getAttribute('data-tags');
-    console.log(articleTags);
     /* split tags into array */
     const articleTagsArray = articleTags.split(' ');
     /* START LOOP: for each tag */
@@ -121,7 +122,6 @@ function generateTags() {
     }
     /* insert HTML of all the links into the tags wrapper */
     tagList.innerHTML = HTML;
-    console.log(tagList);
   /* END LOOP: for every article: */
   }
   /* [NEW] find list of tags in right column */
